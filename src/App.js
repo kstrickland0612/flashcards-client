@@ -6,6 +6,7 @@ import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './app/shared/header/Header'
 import Cards from './app/routes/cards/Cards'
 import CardCreate from './app/routes/cardcreate/CardCreate'
+import MyCards from './app/routes/mycards/MyCards'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -62,6 +63,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/build-card' render ={() => (
             <CardCreate user={user} alert={this.alert} />
+          )} />
+          <AuthenticatedRoute user={user} path='/my-cards' render ={() => (
+            <MyCards user={user} alert={this.alert} />
           )} />
         </main>
       </React.Fragment>
