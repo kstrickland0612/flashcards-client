@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
+import messages from '../../messages'
 
 import CardForm from '../../shared/cardform/CardForm'
 
@@ -20,11 +22,11 @@ class CardCreate extends Component {
     }
   }
 
-  handleSubmit = async event => {
+  handleSubmit = event => {
+    const { alert } = this.props
+
     event.preventDefault()
-    console.log(this.props.user)
-    console.log('the state:', this.state)
-    const response = await
+
     axios({
       method: 'POST',
       url: `${apiUrl}/cards`,
@@ -37,7 +39,9 @@ class CardCreate extends Component {
         }
       }
     })
-    this.setState({ createdCardId: response.data.card.id })
+      .then(res => this.setState({ createdCardId: res.data.card.id }))
+      .then(() => alert(messages.cardCreateSuccess, 'success'))
+      .catch(() => alert(messages.cardCreateFail, 'danger'))
   }
 
   handleChange = event => {
@@ -50,7 +54,11 @@ class CardCreate extends Component {
   }
 
   render () {
-    const { card } = this.state
+    const { card, createdCardId } = this.state
+
+    if (createdCardId) {
+      return <Redirect to={'/'} />
+    }
 
     return (
       <Fragment>

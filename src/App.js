@@ -61,7 +61,7 @@ class App extends Component {
             <ChangePassword alert={this.alert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/build-card' render ={() => (
-            <CardCreate user={user} />
+            <CardCreate user={user} alert={this.alert} />
           )} />
         </main>
       </React.Fragment>
