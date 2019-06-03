@@ -10,7 +10,7 @@ import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Nav.Link href="#add-card">Build a Card</Nav.Link>
+    <Nav.Link href="#build-card">Build a Card</Nav.Link>
     <NavDropdown alignRight title="My Account" id="basic-nav-dropdown">
       <NavDropdown.Item href="#my-cards">My Cards</NavDropdown.Item>
       <NavDropdown.Item href="#change-password">Change Password</NavDropdown.Item>

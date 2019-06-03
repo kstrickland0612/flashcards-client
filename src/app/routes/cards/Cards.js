@@ -3,7 +3,6 @@ import axios from 'axios'
 import apiUrl from './../../../apiConfig'
 
 import Card from 'react-bootstrap/Card'
-import CardDeck from 'react-bootstrap/CardDeck'
 import Button from 'react-bootstrap/Button'
 
 class Cards extends Component {
@@ -29,25 +28,30 @@ class Cards extends Component {
 
     return (
       <Fragment>
-        <CardDeck className="col-12">
-          {user && cards.map(card => (
-            <Card key={card.id} className="col-6" bg="light" style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title>
-                  <h1>{card.category}</h1>
-                </Card.Title>
-              </Card.Body>
-              <Button variant="primary"> Add to Deck</Button>
-            </Card>))}
-          {!user && cards.map(card => (
-            <Card key={card.id} className="col-6" bg="light" style={{ width: '18rem' }}>
-              <Card.Body>
-                <Card.Title>
-                  <h1>{card.category}</h1>
-                </Card.Title>
-              </Card.Body>
-            </Card>))}
-        </CardDeck>
+        {user && cards.map(card => (
+          <Card key={card.id} className="text-center" bg="light">
+            <Card.Header>{card.category}</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                <h1>{card.front}</h1>
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
+            <Button variant="primary"> Add to Deck</Button>
+            <br />
+          </Card>))}
+        {!user && cards.map(card => (
+          <Card key={card.id} className="text-center" bg="light">
+            <Card.Header>{card.category}</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                <h1>{card.front}</h1>
+              </Card.Text>
+            </Card.Body>
+            <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
+            <Button variant="secondary" disabled> Sign in to Add to Deck</Button>
+            <br />
+          </Card>))}
       </Fragment>
     )
   }
