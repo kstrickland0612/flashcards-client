@@ -29,7 +29,7 @@ class MyCards extends Component {
     return (
       <Fragment>
         {cards.filter(card => card.user.id === user.id).map(card => (
-          <Card key={card.id} className="text-center" bg="light">
+          <Card key={card.id} className="text-center mt-4" bg="light">
             <Card.Header>{card.category}</Card.Header>
             <Card.Body>
               <Card.Text>

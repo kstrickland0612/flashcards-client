@@ -29,7 +29,7 @@ class Cards extends Component {
     return (
       <Fragment>
         {user && cards.map(card => (
-          <Card key={card.id} className="text-center" bg="light">
+          <Card key={card.id} className="text-center mt-4" bg="light">
             <Card.Header>{card.category}</Card.Header>
             <Card.Body>
               <Card.Text>
@@ -38,10 +38,9 @@ class Cards extends Component {
             </Card.Body>
             <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
             <Button variant="primary"> Add to Deck</Button>
-            <br />
           </Card>))}
         {!user && cards.map(card => (
-          <Card key={card.id} className="text-center" bg="light">
+          <Card key={card.id} className="text-center mt-4" bg="light">
             <Card.Header>{card.category}</Card.Header>
             <Card.Body>
               <Card.Text>
@@ -49,8 +48,6 @@ class Cards extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
-            <Button variant="secondary" disabled> Sign in to Add to Deck</Button>
-            <br />
           </Card>))}
       </Fragment>
     )
