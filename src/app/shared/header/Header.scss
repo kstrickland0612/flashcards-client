@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
+
 $charcoal: #bbb;
+
+.welcome-message {
+  align-items: center;
+  color: $charcoal;
+  display: flex;
+}
 
 .main-header {
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;
+  font-family: 'Baloo Da', cursive;
   height: 100px;
   padding: 0 20px;
 
@@ -14,7 +23,7 @@ $charcoal: #bbb;
   }
 }
 
-.main-header > nav {
+.main-header > Nav {
   align-items: center;
   display: flex;
   flex-grow: 1;
