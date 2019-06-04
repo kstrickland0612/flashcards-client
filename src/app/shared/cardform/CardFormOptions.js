@@ -26,7 +26,6 @@ class CardFormOptions extends Component {
   }
 
   handleInput = () => {
-    console.log('here is the state:', this.state)
     if (this.state.inputSelected === 'other') {
       return this.setState({ inputHidden: false })
     } else {
@@ -42,6 +41,9 @@ class CardFormOptions extends Component {
   render () {
     const { cards, inputHidden } = this.state
 
+    const cardCats = cards.map(card => (card.category))
+    const uniqueCats = Array.from(new Set(cardCats))
+
     return (
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
@@ -51,8 +53,8 @@ class CardFormOptions extends Component {
           placeholder="Category"
           name="category">
           <option value={null}>Select a Category...</option>
-          {cards.map(card => (
-            <option key={card.id} value={card.category}>{card.category}</option>
+          {uniqueCats.map(category => (
+            <option key={uniqueCats} value={category}>{category}</option>
           ))}
           <option value="other">Other</option>
         </Form.Control>
