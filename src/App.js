@@ -4,6 +4,7 @@ import { Route, withRouter } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './app/shared/header/Header'
+import Footer from './app/shared/footer/Footer'
 import Cards from './app/routes/cards/Cards'
 import CardCreate from './app/routes/cardcreate/CardCreate'
 import MyCards from './app/routes/mycards/MyCards'
@@ -72,6 +73,7 @@ class App extends Component {
             <CardEdit match={match} user={user} alert={this.alert} />
           )} />
         </main>
+        <Footer />
       </React.Fragment>
     )
   }

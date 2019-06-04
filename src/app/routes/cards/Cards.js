@@ -3,7 +3,12 @@ import axios from 'axios'
 import apiUrl from './../../../apiConfig'
 
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag } from '@fortawesome/free-solid-svg-icons'
+
+import './Cards.scss'
 
 class Cards extends Component {
   constructor (props) {
@@ -29,26 +34,31 @@ class Cards extends Component {
     return (
       <Fragment>
         {user && cards.map(card => (
-          <Card key={card.id} className="text-center mt-4" bg="light">
-            <Card.Header>{card.category}</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                <h1>{card.front}</h1>
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
-            <Button variant="primary"> Add to Deck</Button>
-          </Card>))}
+          <div key={card.id} className="flip-card">
+            <Card className="flip-card-inner text-center mt-4" bg="light">
+              <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
+              <Card.Body >
+                <Card.Text>
+                  <h1 className="flip-card-front">{card.front}</h1>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
+              <p className="flip-card-back">{card.back}</p>
+            </Card>
+          </div>))}
         {!user && cards.map(card => (
-          <Card key={card.id} className="text-center mt-4" bg="light">
-            <Card.Header>{card.category}</Card.Header>
-            <Card.Body>
-              <Card.Text>
-                <h1>{card.front}</h1>
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
-          </Card>))}
+          <div key={card.id} className="flip-card">
+            <Card className="flip-card-inner text-center mt-4" bg="light">
+              <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
+              <Card.Body >
+                <Card.Text>
+                  <h1 className="flip-card-front">{card.front}</h1>
+                </Card.Text>
+              </Card.Body>
+              <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
+              <p className="flip-card-back">{card.back}</p>
+            </Card>
+          </div>))}
       </Fragment>
     )
   }
