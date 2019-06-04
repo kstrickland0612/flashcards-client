@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
+import messages from '../../messages'
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -23,6 +24,17 @@ class MyCards extends Component {
       .catch(console.error)
   }
 
+  deleteCard = (id) => {
+    const { alert } = this.props
+    axios({
+      method: 'DELETE',
+      url: `${apiUrl}/cards/${id}`
+    })
+      .then(() => alert(messages.cardDeleteSuccess, 'success'))
+      .then(() => this.componentDidMount())
+      .catch(() => alert(messages.fail, 'danger'))
+  }
+
   render () {
     const { cards } = this.state
     const { user } = this.props
@@ -41,7 +53,7 @@ class MyCards extends Component {
             <Link to={'/cards/' + card.id + '/edit'}>
               <Button variant="success"> Edit</Button>
             </Link>
-            <Button variant="danger"> Delete</Button>
+            <Button variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
             <br />
           </Card>))}
       </Fragment>
