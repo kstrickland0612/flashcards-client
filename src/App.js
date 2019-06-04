@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import './App.scss'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 import AuthenticatedRoute from './auth/components/AuthenticatedRoute'
 import Header from './app/shared/header/Header'
 import Cards from './app/routes/cards/Cards'
 import CardCreate from './app/routes/cardcreate/CardCreate'
 import MyCards from './app/routes/mycards/MyCards'
+import CardEdit from './app/routes/cardedit/CardEdit'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -67,10 +68,13 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/my-cards' render ={() => (
             <MyCards user={user} alert={this.alert} />
           )} />
+          <AuthenticatedRoute user={user} path='/cards/:id/edit' render ={({ match }) => (
+            <CardEdit match={match} user={user} alert={this.alert} />
+          )} />
         </main>
       </React.Fragment>
     )
   }
 }
 
-export default App
+export default withRouter(App)

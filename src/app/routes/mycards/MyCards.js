@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
 
@@ -37,7 +38,9 @@ class MyCards extends Component {
               </Card.Text>
             </Card.Body>
             <Card.Footer className="text-muted">Created by: {card.user.email}</Card.Footer>
-            <Button variant="success"> Edit</Button>
+            <Link to={'/cards/' + card.id + '/edit'}>
+              <Button variant="success"> Edit</Button>
+            </Link>
             <Button variant="danger"> Delete</Button>
             <br />
           </Card>))}

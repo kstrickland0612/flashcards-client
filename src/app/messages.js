@@ -1,4 +1,5 @@
 export default {
   cardCreateSuccess: 'Succesfully created your card!',
-  cardCreateFail: 'Sorry, something went wrong. Please try again.'
+  fail: 'Sorry, something went wrong. Please try again.',
+  cardUpdateSuccess: 'Successfully updated your card!'
 }

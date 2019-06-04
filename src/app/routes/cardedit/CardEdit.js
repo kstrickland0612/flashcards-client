@@ -7,9 +7,9 @@ import messages from '../../messages'
 
 import CardForm from '../../shared/cardform/CardForm'
 
-class CardCreate extends Component {
-  constructor () {
-    super()
+class CardEdit extends Component {
+  constructor (props) {
+    super(props)
 
     this.state = {
       card: {
@@ -18,8 +18,13 @@ class CardCreate extends Component {
         back: ''
         // user_id: this.props.user.id
       },
-      createdCardId: null
+      updated: false
     }
+  }
+
+  componentDidMount () {
+    axios(`${apiUrl}/cards/${this.props.match.params.id}`)
+      .then(res => (this.setState({ card: res.data.card })))
   }
 
   handleSubmit = event => {
@@ -28,8 +33,8 @@ class CardCreate extends Component {
     event.preventDefault()
 
     axios({
-      method: 'POST',
-      url: `${apiUrl}/cards`,
+      method: 'PATCH',
+      url: `${apiUrl}/cards/${this.props.match.params.id}`,
       data: {
         'card': {
           'category': this.state.card.category,
@@ -39,8 +44,8 @@ class CardCreate extends Component {
         }
       }
     })
-      .then(res => this.setState({ createdCardId: res.data.card.id }))
-      .then(() => alert(messages.cardCreateSuccess, 'success'))
+      .then(res => this.setState({ updated: true }))
+      .then(() => alert(messages.cardUpdateSuccess, 'success'))
       .catch(() => alert(messages.fail, 'danger'))
   }
 
@@ -54,24 +59,24 @@ class CardCreate extends Component {
   }
 
   render () {
-    const { card, createdCardId } = this.state
+    const { card, updated } = this.state
 
-    if (createdCardId) {
-      return <Redirect to={'/'} />
+    if (updated) {
+      return <Redirect to={'/my-cards'} />
     }
 
     return (
       <Fragment>
-        <h1>Build a Card</h1>
+        <h1>Edit your Card</h1>
         <CardForm
           card={card}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-          cancelPath=''
+          cancelPath='/my-cards'
         />
       </Fragment>
     )
   }
 }
 
-export default CardCreate
+export default CardEdit

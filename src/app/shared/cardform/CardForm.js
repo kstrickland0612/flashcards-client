@@ -43,7 +43,7 @@ const CardForm = ({
       />
     </Form.Group>
 
-    <Button type="submit">Create Card</Button>
+    <Button type="submit">Submit</Button>
 
     <Link to={cancelPath}>
       <Button variant="secondary">Cancel</Button>
