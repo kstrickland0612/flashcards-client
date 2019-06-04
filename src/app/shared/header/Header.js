@@ -43,10 +43,10 @@ const Header = ({ user, handleSearch }) => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Form inline>
-            <FormControl name="search" type="text" placeholder="Search Cards" className="mr-sm-2" onChange={handleSearch}/>
-          </Form>
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
+          <Form inline>
+            <FormControl name="search" type="text" placeholder="Search Cards by Tag" className="mr-sm-2" onChange={handleSearch}/>
+          </Form>
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>
       </Navbar.Collapse>
