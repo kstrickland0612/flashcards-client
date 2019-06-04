@@ -3,6 +3,9 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faBolt } from '@fortawesome/free-solid-svg-icons'
 
@@ -33,13 +36,16 @@ const unauthenticatedOptions = (
 //   </React.Fragment>
 // )
 
-const Header = ({ user }) => (
+const Header = ({ user, handleSearch }) => (
   <header className="main-header">
     <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
       <Navbar.Brand className="nav-brand" href="#">F<FontAwesomeIcon icon={faBolt} />ash Cards</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
+          <Form inline>
+            <FormControl name="search" type="text" placeholder="Search Cards" className="mr-sm-2" onChange={handleSearch}/>
+          </Form>
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>

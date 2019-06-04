@@ -22,7 +22,8 @@ class App extends Component {
 
     this.state = {
       user: null,
-      alerts: []
+      alerts: [],
+      search: ''
     }
   }
 
@@ -34,12 +35,25 @@ class App extends Component {
     this.setState({ alerts: [...this.state.alerts, { message, type }] })
   }
 
+  handleSearch = event => {
+    event.preventDefault()
+    const updateSearch = {
+      [event.target.name]: event.target.value
+    }
+    console.log(event.target.name)
+    console.log(event.target.value)
+
+    const searchContent = Object.assign(this.state.search, updateSearch)
+    this.setState({ search: searchContent })
+    console.log(this.state)
+  }
+
   render () {
-    const { alerts, user } = this.state
+    const { alerts, user, search } = this.state
 
     return (
       <React.Fragment>
-        <Header user={user} />
+        <Header user={user} handleSearch={this.handleSearch}/>
         {alerts.map((alert, index) => (
           <Alert key={index} dismissible variant={alert.type}>
             <Alert.Heading>
@@ -49,7 +63,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Cards user={user} />
+            <Cards user={user} search={search} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
