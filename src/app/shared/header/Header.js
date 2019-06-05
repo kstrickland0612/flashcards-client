@@ -48,7 +48,7 @@ const Header = ({ user, handleSearch }) => (
         <Nav className="ml-auto">
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
           {window.location.hash === '#/' ? <SearchBar handleSearch={handleSearch}/> : ''}
-          <CatDropdown />
+          {window.location.hash === '#/' || window.location.hash.includes('#/cards/') ? <CatDropdown /> : ''}
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>
       </Navbar.Collapse>
