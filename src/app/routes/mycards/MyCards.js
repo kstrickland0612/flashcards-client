@@ -46,23 +46,32 @@ class MyCards extends Component {
 
     return (
       <Fragment>
-        {cards.filter(card => card.user.id === user.id).map(card => (
-          <div key={card.id} className="flip-card">
-            <Card className="flip-card-inner text-center mt-4" bg="light">
-              <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
-              <Card.Body >
-                <Card.Text>
-                  <h1 className="flip-card-front">{card.front}</h1>
-                </Card.Text>
-              </Card.Body>
-              <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
-              <p className="flip-card-back">{card.back}</p>
-            </Card>
-            <Link to={'/cards/' + card.id + '/edit'}>
-              <Button variant="success"> Edit</Button>
-            </Link>
-            <Button variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
-          </div>))}
+        <div className="row d-flex justify-content-center">
+          {cards.filter(card => card.user.id === user.id).map(card => (
+            <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
+              <Card className="flip-card-inner text-center mt-4" bg="light">
+                <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
+                <Card.Body >
+                  <h1 className="flip-card-front"><Card.Text>
+                    {card.front}</Card.Text></h1>
+                </Card.Body>
+                <Card.Footer className="hide-text text-muted">
+                  <p>Created by: {card.user.email}</p>
+                </Card.Footer>
+                <div className="flip-card-back">
+                  <h3><Card.Text>
+                    {card.back}
+                  </Card.Text></h3>
+                </div>
+              </Card>
+              <div className="row d-flex buttons">
+                <Link to={'/cards/' + card.id + '/edit'}>
+                  <Button variant="success"> Edit</Button>
+                </Link>
+                <Button variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
+              </div>
+            </div>))}
+        </div>
       </Fragment>
     )
   }

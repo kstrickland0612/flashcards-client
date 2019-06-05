@@ -41,12 +41,9 @@ class App extends Component {
     const updateSearch = {
       [event.target.name]: event.target.value
     }
-    console.log(event.target.name)
-    console.log(event.target.value)
 
     const searchContent = Object.assign(this.state.search, updateSearch)
     this.setState({ search: searchContent })
-    console.log(this.state)
   }
 
   render () {

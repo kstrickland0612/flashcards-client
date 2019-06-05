@@ -12,7 +12,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faBolt, faTools, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './Header.scss'
-console.log('here are the props', this.props)
 
 const authenticatedOptions = (
   <React.Fragment>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
@@ -30,9 +30,9 @@ class CatDropdown extends Component {
 
     return (
       <NavDropdown alignRight title="Filter by Tag" id="basic-nav-dropdown">
-        {uniqueCats.map(category => (
-          <NavDropdown.Item key={category}>
-            <Link to={'/cards/' + category} >{category}</Link>
+        {uniqueCats.map((category, i) => (
+          <NavDropdown.Item key={i} href={'#/cards/' + category}>
+            {category}
           </NavDropdown.Item>
         ))}
       </NavDropdown>
