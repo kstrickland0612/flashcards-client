@@ -9,6 +9,7 @@ import Cards from './app/routes/cards/Cards'
 import CardCreate from './app/routes/cardcreate/CardCreate'
 import MyCards from './app/routes/mycards/MyCards'
 import CardEdit from './app/routes/cardedit/CardEdit'
+import CardsByCat from './app/routes/cardsbycat/CardsByCat'
 import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
@@ -85,6 +86,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/cards/:id/edit' render ={({ match }) => (
             <CardEdit match={match} user={user} alert={this.alert} />
+          )} />
+          <Route exact path='/cards/:category' render ={({ match }) => (
+            <CardsByCat match={match} />
           )} />
         </main>
         <Footer />

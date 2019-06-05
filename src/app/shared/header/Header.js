@@ -1,5 +1,6 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
+import CatDropdown from '../catdropdown/CatDropdown'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
@@ -45,8 +46,9 @@ const Header = ({ user, handleSearch }) => (
         <Nav className="ml-auto">
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
           <Form inline>
-            <FormControl name="search" type="text" placeholder="Search Cards by Tag" className="mr-sm-2" onChange={handleSearch}/>
+            <FormControl name="search" type="text" placeholder="Search Cards by Content" className="mr-sm-2" onChange={handleSearch}/>
           </Form>
+          <CatDropdown />
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>
       </Navbar.Collapse>
