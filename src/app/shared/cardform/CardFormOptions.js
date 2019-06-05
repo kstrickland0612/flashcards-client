@@ -26,7 +26,6 @@ class CardFormOptions extends Component {
   }
 
   handleInput = () => {
-    console.log(this.state)
     if (this.state.inputSelected === 'other') {
       return this.setState({ inputHidden: false })
     } else {
@@ -35,8 +34,6 @@ class CardFormOptions extends Component {
   }
 
   handleSelectChange = event => {
-    console.log('this is the event target name', event.target.name)
-    console.log('this is the event target value', event.target.value)
     return this.setState({ inputSelected: event.target.value }, this.handleInput)
   }
 

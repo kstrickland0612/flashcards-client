@@ -29,8 +29,6 @@ class CardEdit extends Component {
   }
 
   handleSubmit = event => {
-    console.log(this.state)
-
     const { alert } = this.props
 
     event.preventDefault()
@@ -54,8 +52,6 @@ class CardEdit extends Component {
   }
 
   handleChange = event => {
-    console.log('this is the event target name', event.target.name)
-    console.log('this is the event target value', event.target.value)
     const updatedField = {
       [event.target.name]: event.target.value
     }
