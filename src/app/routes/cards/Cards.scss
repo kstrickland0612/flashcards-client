@@ -3,6 +3,7 @@
 .flip-card {
   font-family: 'Baloo Da', cursive;
   perspective: 1000px;
+  cursor: pointer;
 }
 
 .flip-card-inner {
@@ -23,6 +24,7 @@
 
 .flip-card:hover .hide-text {
   visibility: hidden;
+  cursor: pointer;
 }
 
 .flip-card-front, .flip-card-back {
@@ -30,11 +32,13 @@
   height: 100%;
   position: absolute;
   width: 100%;
+  cursor: pointer;
 }
 
 .flip-card-front {
   color: black;
   position: relative;
+  cursor: pointer;
 }
 
 .flip-card-back {
