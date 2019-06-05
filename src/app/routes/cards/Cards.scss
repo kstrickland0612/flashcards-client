@@ -13,11 +13,11 @@
   transform-style: preserve-3d;
 }
 
-.flip-card:active .flip-card-inner {
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card:active .hide-text {
+.flip-card:hover .hide-text {
   visibility: hidden;
 }
 

@@ -7,14 +7,14 @@ import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignOutAlt, faBolt } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt, faBolt, faTools, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './Header.scss'
 
 const authenticatedOptions = (
   <React.Fragment>
-    <Nav.Link href="#build-card">Build a Card</Nav.Link>
-    <NavDropdown alignRight title="My Account" id="basic-nav-dropdown">
+    <Nav.Link href="#build-card"><FontAwesomeIcon icon={faTools} /> Build a Card</Nav.Link>
+    <NavDropdown alignRight title={<FontAwesomeIcon icon={faUser} />} id="basic-nav-dropdown">
       <NavDropdown.Item href="#my-cards">My Cards</NavDropdown.Item>
       <NavDropdown.Item href="#change-password">Change Password</NavDropdown.Item>
       <NavDropdown.Divider />
