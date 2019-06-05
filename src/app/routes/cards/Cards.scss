@@ -11,10 +11,12 @@
   position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .flip-card:hover .hide-text {
@@ -39,4 +41,5 @@
   align-items: center;
   color: black;
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
