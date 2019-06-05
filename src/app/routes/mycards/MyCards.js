@@ -48,7 +48,7 @@ class MyCards extends Component {
       <Fragment>
         {cards.filter(card => card.user.id === user.id).map(card => (
           <div key={card.id} className="flip-card">
-            <Card className="flip-card-inner text-center mt-4" bg="light">
+            <Card className="flip-card-inner text-center mt-4" onClick="" bg="light">
               <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
               <Card.Body >
                 <Card.Text>
