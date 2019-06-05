@@ -1,16 +1,18 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import CatDropdown from '../catdropdown/CatDropdown'
+import SearchBar from '../searchbar/SearchBar'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
+// import Form from 'react-bootstrap/Form'
+// import FormControl from 'react-bootstrap/FormControl'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSignOutAlt, faBolt, faTools, faUser } from '@fortawesome/free-solid-svg-icons'
 
 import './Header.scss'
+console.log('here are the props', this.props)
 
 const authenticatedOptions = (
   <React.Fragment>
@@ -31,9 +33,9 @@ const unauthenticatedOptions = (
   </React.Fragment>
 )
 
-// const alwaysOptions = (
+// const rootOptions = (
 //   <React.Fragment>
-//     <Link to="/">All Cards</Link>
+//     <SearchBar handleSearch={this.handleSearch}/>
 //   </React.Fragment>
 // )
 
@@ -45,9 +47,7 @@ const Header = ({ user, handleSearch }) => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
-          <Form inline>
-            <FormControl name="search" type="text" placeholder="Search Cards by Content" className="mr-sm-2" onChange={handleSearch}/>
-          </Form>
+          {window.location.hash === '#/' ? <SearchBar handleSearch={handleSearch}/> : ''}
           <CatDropdown />
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>
