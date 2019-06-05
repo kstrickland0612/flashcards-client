@@ -26,6 +26,7 @@ class CardFormOptions extends Component {
   }
 
   handleInput = () => {
+    console.log(this.state)
     if (this.state.inputSelected === 'other') {
       return this.setState({ inputHidden: false })
     } else {
@@ -36,7 +37,12 @@ class CardFormOptions extends Component {
   handleSelectChange = event => {
     console.log('this is the event target name', event.target.name)
     console.log('this is the event target value', event.target.value)
-    this.setState({ inputSelected: event.target.value }, this.handleInput)
+    return this.setState({ inputSelected: event.target.value }, this.handleInput)
+  }
+
+  handleAllTheChanges = event => {
+    this.props.handleChange(event)
+    this.handleSelectChange(event)
   }
 
   render () {
@@ -48,7 +54,7 @@ class CardFormOptions extends Component {
     return (
       <Form.Group controlId="category">
         <Form.Label>Category</Form.Label>
-        <Form.Control as="select" onChange={this.handleSelectChange}
+        <Form.Control as="select" onChange={this.handleAllTheChanges}
           required
           type="text"
           placeholder="Category"
