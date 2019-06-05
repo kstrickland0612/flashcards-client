@@ -14,6 +14,7 @@ class CardEdit extends Component {
     this.state = {
       card: {
         category: '',
+        image: '',
         front: '',
         back: ''
         // user_id: this.props.user.id
@@ -28,6 +29,8 @@ class CardEdit extends Component {
   }
 
   handleSubmit = event => {
+    console.log(this.state)
+
     const { alert } = this.props
 
     event.preventDefault()
@@ -38,6 +41,7 @@ class CardEdit extends Component {
       data: {
         'card': {
           'category': this.state.card.category,
+          'image': this.state.card.image,
           'front': this.state.card.front,
           'back': this.state.card.back,
           'user_id': this.props.user.id
@@ -50,12 +54,15 @@ class CardEdit extends Component {
   }
 
   handleChange = event => {
+    console.log('this is the event target name', event.target.name)
+    console.log('this is the event target value', event.target.value)
     const updatedField = {
       [event.target.name]: event.target.value
     }
 
     const editedCard = Object.assign(this.state.card, updatedField)
     this.setState({ card: editedCard })
+    console.log(this.state)
   }
 
   render () {

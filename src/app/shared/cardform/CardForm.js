@@ -10,6 +10,17 @@ const CardForm = ({
 
     <CardFormOptions handleChange={handleChange}/>
 
+    <Form.Group controlId="image">
+      <Form.Label>Image (optional)</Form.Label>
+      <Form.Control
+        type="text"
+        placeholder="Image link"
+        name="image"
+        value={card.image}
+        onChange={handleChange}
+      />
+    </Form.Group>
+
     <Form.Group controlId="front">
       <Form.Label>Front</Form.Label>
       <Form.Control as="textarea" rows="3"

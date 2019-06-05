@@ -28,10 +28,6 @@ class Cards extends Component {
       .catch(console.error)
   }
 
-  nailedIt = () => {
-    this.setState({ color: 'green' })
-  }
-
   render () {
     const { cards } = this.state
     const { user } = this.props
@@ -45,8 +41,12 @@ class Cards extends Component {
               <Card className="flip-card-inner text-center mt-4 " bg="light">
                 <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
                 <Card.Body >
-                  <h1 className="flip-card-front"><Card.Text>
-                    {card.front}</Card.Text></h1>
+                  <h1 className="flip-card-front">
+                    <Card.Img variant="top" src={card.image} />
+                    <Card.Text>
+                      {card.front}
+                    </Card.Text>
+                  </h1>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
                 <div className="flip-card-back">
@@ -61,8 +61,12 @@ class Cards extends Component {
               <Card className="flip-card-inner text-center mt-4" bg="light">
                 <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
                 <Card.Body >
-                  <h1 className="flip-card-front"><Card.Text>
-                    {card.front}</Card.Text></h1>
+                  <h1 className="flip-card-front">
+                    <Card.Img variant="top" src={card.image} />
+                    <Card.Text>
+                      {card.front}
+                    </Card.Text>
+                  </h1>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
                 <div className="flip-card-back">
@@ -77,8 +81,12 @@ class Cards extends Component {
               <Card className="flip-card-inner text-center mt-4" bg="light">
                 <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
                 <Card.Body >
-                  <h1 className="flip-card-front"><Card.Text>
-                    {card.front}</Card.Text></h1>
+                  <h1 className="flip-card-front">
+                    <Card.Img variant="top" src={card.image} />
+                    <Card.Text>
+                      {card.front}
+                    </Card.Text>
+                  </h1>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
                 <div className="flip-card-back">
@@ -93,8 +101,12 @@ class Cards extends Component {
               <Card className="flip-card-inner text-center mt-4" bg="light">
                 <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
                 <Card.Body >
-                  <h1 className="flip-card-front"><Card.Text>
-                    {card.front}</Card.Text></h1>
+                  <h1 className="flip-card-front">
+                    <Card.Img variant="top" src={card.image} />
+                    <Card.Text>
+                      {card.front}
+                    </Card.Text>
+                  </h1>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
                 <div className="flip-card-back">

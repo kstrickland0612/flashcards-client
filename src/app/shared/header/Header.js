@@ -40,7 +40,7 @@ const unauthenticatedOptions = (
 
 const Header = ({ user, handleSearch }) => (
   <header className="main-header">
-    <Navbar collapseOnSelect bg="dark" variant="dark" expand="md">
+    <Navbar collapseOnSelect bg="dark" variant="dark" expand="xl">
       <Navbar.Brand className="nav-brand" href="#">F<FontAwesomeIcon icon={faBolt} />ash Cards</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

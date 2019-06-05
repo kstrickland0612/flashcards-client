@@ -34,6 +34,8 @@ class CardFormOptions extends Component {
   }
 
   handleSelectChange = event => {
+    console.log('this is the event target name', event.target.name)
+    console.log('this is the event target value', event.target.value)
     this.setState({ inputSelected: event.target.value }, this.handleInput)
   }
 
@@ -51,7 +53,7 @@ class CardFormOptions extends Component {
           type="text"
           placeholder="Category"
           name="category">
-          <option value={null}>Select a Category...</option>
+          <option value=''>Select a Category...</option>
           {uniqueCats.map((category, i) => (
             <option key={i} value={category}>{category}</option>
           ))}

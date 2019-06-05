@@ -14,6 +14,7 @@ class CardCreate extends Component {
     this.state = {
       card: {
         category: '',
+        image: '',
         front: '',
         back: ''
         // user_id: this.props.user.id
@@ -25,6 +26,8 @@ class CardCreate extends Component {
   handleSubmit = event => {
     const { alert } = this.props
 
+    console.log(this.state)
+
     event.preventDefault()
 
     axios({
@@ -33,6 +36,7 @@ class CardCreate extends Component {
       data: {
         'card': {
           'category': this.state.card.category,
+          'image': this.state.card.image,
           'front': this.state.card.front,
           'back': this.state.card.back,
           'user_id': this.props.user.id
@@ -45,6 +49,8 @@ class CardCreate extends Component {
   }
 
   handleChange = event => {
+    console.log('this is the event target name', event.target.name)
+    console.log('this is the event target value', event.target.value)
     const updatedField = {
       [event.target.name]: event.target.value
     }

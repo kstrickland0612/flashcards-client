@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
+
 $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
@@ -32,6 +34,7 @@ $charcoal: #ccc;
 .auth-form {
   display: flex;
   flex-direction: column;
+  font-family: 'Baloo Da', cursive;
   justify-content: center;
   margin: 15% auto 0;
   max-width: 600px;
@@ -43,6 +46,7 @@ $charcoal: #ccc;
 
   button {
     align-self: flex-end;
+    font-family: 'Baloo Da', cursive;
     max-width: 200px;
   }
 }
