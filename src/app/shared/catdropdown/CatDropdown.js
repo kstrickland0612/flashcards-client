@@ -6,6 +6,9 @@ import messages from '../../messages'
 
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTag, faBolt } from '@fortawesome/free-solid-svg-icons'
+
 class CatDropdown extends Component {
   constructor () {
     super()
@@ -31,11 +34,11 @@ class CatDropdown extends Component {
     const uniqueCats = Array.from(new Set(cardCats))
 
     return (
-      <NavDropdown alignRight title="Filter by Tag" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#/">All Cards</NavDropdown.Item>
+      <NavDropdown title="Filter by Tag" id="basic-nav-dropdown">
+        <NavDropdown.Item href="#/"><FontAwesomeIcon icon={faBolt} /> All Cards</NavDropdown.Item>
         {uniqueCats.map((category, i) => (
           <NavDropdown.Item key={i} href={'#/cards/' + category}>
-            {category}
+            <FontAwesomeIcon icon={faTag} /> {category}
           </NavDropdown.Item>
         ))}
       </NavDropdown>

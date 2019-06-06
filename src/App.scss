@@ -73,9 +73,19 @@ body {
 }
 
 .dropdown-item:active {
-  background-color: $orange;
+  background-color: $yellow;
+  color: grey;
 }
 
 .dropdown-item.active {
-  background-color: $orange;
+  background-color: $yellow;
+  color: grey;
+}
+
+.select-option:hover {
+  background-color: $yellow;
+}
+
+.select-option.active {
+  background-color: $yellow;
 }

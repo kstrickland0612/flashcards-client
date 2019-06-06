@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 // import Button from 'react-bootstrap/Button'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
+import { faTag, faBolt } from '@fortawesome/free-solid-svg-icons'
 
 import '../cards/Cards.scss'
 
@@ -47,7 +47,7 @@ class CardsByCat extends Component {
                     </Card.Text>
                   </h2>
                 </Card.Body>
-                <Card.Footer className="hide-text text-muted">Created by: {card.user.email.split('@')[0]}</Card.Footer>
+                <Card.Footer className="hide-text text-muted"><FontAwesomeIcon icon={faBolt} /> Created by: {card.user.email.split('@')[0]}</Card.Footer>
                 <div className="flip-card-back">
                   <h3><Card.Text>
                     {card.back}

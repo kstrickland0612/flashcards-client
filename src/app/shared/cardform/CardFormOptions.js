@@ -58,7 +58,7 @@ class CardFormOptions extends Component {
           type="text"
           placeholder="Category"
           name="category">
-          <option value=''>Select a Category...</option>
+          <option className="select-option" value=''>Select a Category...</option>
           {uniqueCats.map((category, i) => (
             <option key={i} value={category}>{category}</option>
           ))}

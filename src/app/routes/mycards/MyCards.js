@@ -8,7 +8,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTag } from '@fortawesome/free-solid-svg-icons'
+import { faTag, faBolt } from '@fortawesome/free-solid-svg-icons'
 
 import './MyCards.scss'
 
@@ -64,7 +64,7 @@ class MyCards extends Component {
                   </h2>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">
-                  <p>Created by: {card.user.email.split('@')[0]}</p>
+                  <p><FontAwesomeIcon icon={faBolt} /> Created by: {card.user.email.split('@')[0]}</p>
                 </Card.Footer>
                 <div className="flip-card-back">
                   <h3><Card.Text>
@@ -76,7 +76,7 @@ class MyCards extends Component {
                 <Link to={'/cards/' + card.id + '/edit'}>
                   <Button className="edit" variant="success"> Edit</Button>
                 </Link>
-                <Button className="delete" variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
+                <Button variant="secondary" onClick={() => this.deleteCard(card.id)}> Delete</Button>
               </div>
             </div>))}
         </div>
