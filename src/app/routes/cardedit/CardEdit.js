@@ -7,6 +7,8 @@ import messages from '../../messages'
 
 import CardForm from '../../shared/cardform/CardForm'
 
+import '../../shared/cardform/CardForm.scss'
+
 class CardEdit extends Component {
   constructor (props) {
     super(props)

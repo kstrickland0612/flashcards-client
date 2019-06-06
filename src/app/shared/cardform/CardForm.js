@@ -4,6 +4,8 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import CardFormOptions from './CardFormOptions'
 
+import './CardForm.scss'
+
 const CardForm = ({
   card, cancelPath, handleSubmit, handleChange }) => (
   <Form onSubmit={handleSubmit} className="card-form">
@@ -44,12 +46,13 @@ const CardForm = ({
         onChange={handleChange}
       />
     </Form.Group>
+    <div className="row d-flex buttons">
+      <Button type="submit">Submit</Button>
 
-    <Button type="submit">Submit</Button>
-
-    <Link to={cancelPath}>
-      <Button variant="secondary">Cancel</Button>
-    </Link>
+      <Link to={cancelPath}>
+        <Button variant="secondary">Cancel</Button>
+      </Link>
+    </div>
 
   </Form>
 )

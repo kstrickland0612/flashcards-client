@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
+
+h1 {
+  display: flex;
+  font-family: 'Baloo Da', cursive;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Baloo Da', cursive;
+  justify-content: center;
+  margin: 2% auto 0;
+  max-width: 600px;
+
+  input {
+    margin-bottom: 5%;
+  }
+
+  .buttons {
+    display:flex;
+    justify-content: flex-start;
+  }
+}
