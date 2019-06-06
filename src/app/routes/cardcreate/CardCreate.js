@@ -24,13 +24,16 @@ class CardCreate extends Component {
   }
 
   handleSubmit = event => {
-    const { alert } = this.props
+    const { alert, user } = this.props
 
     event.preventDefault()
 
     axios({
       method: 'POST',
       url: `${apiUrl}/cards`,
+      headers: {
+        Authorization: `Token token=${user.token}`
+      },
       data: {
         'card': {
           'category': this.state.card.category,

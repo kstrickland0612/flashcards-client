@@ -26,18 +26,28 @@ class CardEdit extends Component {
   }
 
   componentDidMount () {
-    axios(`${apiUrl}/cards/${this.props.match.params.id}`)
+    const { user } = this.props
+    axios({
+      method: 'GET',
+      url: `${apiUrl}/cards/${this.props.match.params.id}`,
+      headers: {
+        Authorization: `Token token=${user.token}`
+      }
+    })
       .then(res => (this.setState({ card: res.data.card })))
   }
 
   handleSubmit = event => {
-    const { alert } = this.props
+    const { alert, user } = this.props
 
     event.preventDefault()
 
     axios({
       method: 'PATCH',
       url: `${apiUrl}/cards/${this.props.match.params.id}`,
+      headers: {
+        Authorization: `Token token=${user.token}`
+      },
       data: {
         'card': {
           'category': this.state.card.category,

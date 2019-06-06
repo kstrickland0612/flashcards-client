@@ -30,10 +30,13 @@ class MyCards extends Component {
   }
 
   deleteCard = (id) => {
-    const { alert } = this.props
+    const { alert, user } = this.props
     axios({
       method: 'DELETE',
-      url: `${apiUrl}/cards/${id}`
+      url: `${apiUrl}/cards/${id}`,
+      headers: {
+        Authorization: `Token token=${user.token}`
+      }
     })
       .then(() => alert(messages.cardDeleteSuccess, 'success'))
       .then(() => this.componentDidMount())
