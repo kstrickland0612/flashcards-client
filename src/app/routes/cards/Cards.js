@@ -56,26 +56,28 @@ class Cards extends Component {
                 </div>
               </Card>
             </div>))}
-          {user && search !== '' && cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase())).map(card => (
-            <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
-              <Card className="flip-card-inner text-center mt-4" bg="light">
-                <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
-                <Card.Body >
-                  <h2 className="flip-card-front">
-                    <Card.Img variant="top" src={card.image} />
-                    <Card.Text>
-                      {card.front}
-                    </Card.Text>
-                  </h2>
-                </Card.Body>
-                <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
-                <div className="flip-card-back">
-                  <h3><Card.Text>
-                    {card.back}
-                  </Card.Text></h3>
-                </div>
-              </Card>
-            </div>))}
+          {user && search !== '' && (cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase()))).length === 0
+            ? <h3>Looks like no cards match that search</h3>
+            : user && search !== '' && cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase())).map(card => (
+              <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
+                <Card className="flip-card-inner text-center mt-4" bg="light">
+                  <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
+                  <Card.Body >
+                    <h2 className="flip-card-front">
+                      <Card.Img variant="top" src={card.image} />
+                      <Card.Text>
+                        {card.front}
+                      </Card.Text>
+                    </h2>
+                  </Card.Body>
+                  <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
+                  <div className="flip-card-back">
+                    <h3><Card.Text>
+                      {card.back}
+                    </Card.Text></h3>
+                  </div>
+                </Card>
+              </div>))}
           {!user && !search && cards.map(card => (
             <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
               <Card className="flip-card-inner text-center mt-4" bg="light">
@@ -96,26 +98,28 @@ class Cards extends Component {
                 </div>
               </Card>
             </div>))}
-          {!user && search !== '' && cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase())).map(card => (
-            <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
-              <Card className="flip-card-inner text-center mt-4" bg="light">
-                <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
-                <Card.Body >
-                  <h2 className="flip-card-front">
-                    <Card.Img variant="top" src={card.image} />
-                    <Card.Text>
-                      {card.front}
-                    </Card.Text>
-                  </h2>
-                </Card.Body>
-                <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
-                <div className="flip-card-back">
-                  <h3><Card.Text>
-                    {card.back}
-                  </Card.Text></h3>
-                </div>
-              </Card>
-            </div>))}
+          {!user && search !== '' && (cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase()))).length === 0
+            ? <h3>Looks like no cards match that search</h3>
+            : !user && search !== '' && cards.filter(card => card.front.toLowerCase().includes(search.search.toLowerCase())).map(card => (
+              <div key={card.id} className="flip-card col-6 col-md-12 col-sm-12">
+                <Card className="flip-card-inner text-center mt-4" bg="light">
+                  <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
+                  <Card.Body >
+                    <h2 className="flip-card-front">
+                      <Card.Img variant="top" src={card.image} />
+                      <Card.Text>
+                        {card.front}
+                      </Card.Text>
+                    </h2>
+                  </Card.Body>
+                  <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
+                  <div className="flip-card-back">
+                    <h3><Card.Text>
+                      {card.back}
+                    </Card.Text></h3>
+                  </div>
+                </Card>
+              </div>))}
         </div>
       </Fragment>
     )
