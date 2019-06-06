@@ -4,6 +4,12 @@ $success: #c7f282;
 $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
+$darkblue: #024059;
+$teal: #03A696;
+$green: #63BF84;
+$yellow: #F5E85D;
+$orange: #F28963;
+$grey: #ECF2F5;
 
 .flash-success,
 .flash-warning,
@@ -49,4 +55,18 @@ $charcoal: #ccc;
     font-family: 'Baloo Da', cursive;
     max-width: 200px;
   }
+}
+
+Header {
+  background-color: $teal;
+  position: fixed;
+  top: 0;
+  margin-top: 0px;
+  width: 100%;
+  z-index: 1;
+
+}
+
+body {
+  background-color: $grey;
 }

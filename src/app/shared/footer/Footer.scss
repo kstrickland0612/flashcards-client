@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
 
+$darkblue: #024059;
+$teal: #03A696;
+$green: #63BF84;
+$yellow: #F5ED0F;
+$orange: #F28963;
+
 footer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: $darkblue;
   bottom: 0;
-  color: black;
-  background: grey;
+  margin-bottom: 0px;
+  color: $orange;
+  background: $darkblue;
   display: flex;
   font-family: 'Baloo Da', cursive;
   height: 60px;
   justify-content: center;
   opacity: 1;
   padding-top: 15px;
-  position: absolute;
-  text-shadow: 1px 1px;
+  position: fixed;
+  text-shadow: .5px .5px;
   width: 100%;
+}
+
+a {
+  margin-left: 7px;
+  color: $orange;
+}
+
+a:hover {
+  color: $teal;
 }

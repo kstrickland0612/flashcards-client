@@ -41,8 +41,8 @@ class CardsByCat extends Component {
                 <Card.Header className="hide-text"><FontAwesomeIcon icon={faTag} /> {card.category}</Card.Header>
                 <Card.Body >
                   <h2 className="flip-card-front">
-                    <Card.Img variant="top" src={card.image} />
-                    <Card.Text>
+                    <Card.Img className="photo" variant="top" src={card.image} />
+                    <Card.Text className="front-text">
                       {card.front}
                     </Card.Text>
                   </h2>

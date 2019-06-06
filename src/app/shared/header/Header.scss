@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
 
 $charcoal: #bbb;
+$darkblue: #024059;
+$teal: #03A696;
+$green: #63BF84;
+$yellow: #F5ED0F;
+$orange: #F28963;
 
 .welcome-message {
   align-items: center;
-  color: $charcoal;
+  color: black;
   display: flex;
 }
 
@@ -28,6 +33,10 @@ $charcoal: #bbb;
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+}
+
+.bolt {
+  color: $yellow;
 }
 
 @media (max-width: 600px) {

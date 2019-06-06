@@ -2,13 +2,31 @@ Button {
   margin: 10px;
 }
 
+.photo {
+  max-height: 200px;
+}
+
+.front-text {
+  margin-top: 30px;
+}
+
 .flip-card {
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 500px;
+  min-width: 350px;
+  min-height: 500px;
+  max-height: 600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .buttons {
   display:flex;
   justify-content: flex-start;
+}
+
+h3 {
+  margin-top: 40px;
 }

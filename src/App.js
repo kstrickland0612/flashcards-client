@@ -52,14 +52,14 @@ class App extends Component {
     return (
       <React.Fragment>
         <Header alert={this.alert} user={user} handleSearch={this.handleSearch}/>
-        {alerts.map((alert, index) => (
-          <Alert key={index} dismissible variant={alert.type}>
-            <Alert.Heading>
-              {alert.message}
-            </Alert.Heading>
-          </Alert>
-        ))}
         <main className="container">
+          {alerts.map((alert, index) => (
+            <Alert key={index} dismissible variant={alert.type}>
+              <Alert.Heading>
+                {alert.message}
+              </Alert.Heading>
+            </Alert>
+          ))}
           <Route exact path='/' render={() => (
             <Cards alert={this.alert} user={user} search={search} />
           )} />
