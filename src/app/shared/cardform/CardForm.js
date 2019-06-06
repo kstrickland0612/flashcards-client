@@ -47,7 +47,7 @@ const CardForm = ({
       />
     </Form.Group>
     <div className="row d-flex buttons">
-      <Button type="submit">Submit</Button>
+      <Button className="submit" type="submit">Submit</Button>
 
       <Link to={cancelPath}>
         <Button variant="secondary">Cancel</Button>

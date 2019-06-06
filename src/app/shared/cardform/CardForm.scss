@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Da&display=swap');
 
+$darkblue: #024059;
+$teal: #03A696;
+$green: #63BF84;
+$yellow: #F5E85D;
+$orange: #F28963;
+$darkgreen: #26A876;
+
 h1 {
   display: flex;
   font-family: 'Baloo Da', cursive;
@@ -24,4 +31,13 @@ h1 {
     display:flex;
     justify-content: flex-start;
   }
+}
+
+.submit {
+  background-color: $green;
+  border-color: $darkgreen;
+}
+
+.submit:hover {
+  background-color: $darkgreen;
 }

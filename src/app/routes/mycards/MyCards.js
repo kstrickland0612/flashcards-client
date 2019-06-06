@@ -74,9 +74,9 @@ class MyCards extends Component {
               </Card>
               <div className="row d-flex buttons">
                 <Link to={'/cards/' + card.id + '/edit'}>
-                  <Button variant="success"> Edit</Button>
+                  <Button className="edit" variant="success"> Edit</Button>
                 </Link>
-                <Button variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
+                <Button className="delete" variant="danger" onClick={() => this.deleteCard(card.id)}> Delete</Button>
               </div>
             </div>))}
         </div>

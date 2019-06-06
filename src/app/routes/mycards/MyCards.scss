@@ -1,3 +1,11 @@
+$darkblue: #024059;
+$teal: #03A696;
+$green: #63BF84;
+$yellow: #F5ED0F;
+$orange: #F28963;
+$darkorange: #F5612F;
+$darkgreen: #26A876;
+
 Button {
   margin: 10px;
 }
@@ -29,4 +37,22 @@ Button {
 
 h3 {
   margin-top: 40px;
+}
+
+.edit {
+  background-color: $green;
+  border-color: $darkgreen;
+}
+
+.edit:hover {
+  background-color: $darkgreen;
+}
+
+.delete {
+  background-color: $orange;
+  border-color: $darkorange;
+}
+
+.delete:hover {
+  background-color: $darkorange;
 }

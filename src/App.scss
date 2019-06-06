@@ -10,6 +10,7 @@ $green: #63BF84;
 $yellow: #F5E85D;
 $orange: #F28963;
 $grey: #ECF2F5;
+$darkgreen: #26A876;
 
 .flash-success,
 .flash-warning,
@@ -58,7 +59,7 @@ $grey: #ECF2F5;
 }
 
 Header {
-  background-color: $teal;
+  background-color: $darkgreen;
   position: fixed;
   top: 0;
   margin-top: 0px;
@@ -69,4 +70,12 @@ Header {
 
 body {
   background-color: $grey;
+}
+
+.dropdown-item:active {
+  background-color: $orange;
+}
+
+.dropdown-item.active {
+  background-color: $orange;
 }
