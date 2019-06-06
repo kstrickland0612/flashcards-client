@@ -30,6 +30,7 @@ class CatDropdown extends Component {
 
     return (
       <NavDropdown alignRight title="Filter by Tag" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/">All Cards</NavDropdown.Item>
         {uniqueCats.map((category, i) => (
           <NavDropdown.Item key={i} href={'#/cards/' + category}>
             {category}
