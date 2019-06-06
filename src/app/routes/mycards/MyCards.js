@@ -22,11 +22,12 @@ class MyCards extends Component {
   }
 
   componentDidMount () {
+    const { alert } = this.props
     axios(`${apiUrl}/cards`)
       .then(res => {
         this.setState({ cards: res.data.cards })
       })
-      .catch(console.error)
+      .catch(() => (alert(messages.dbConnectFail, 'danger')))
   }
 
   deleteCard = (id) => {

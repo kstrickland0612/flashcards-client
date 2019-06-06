@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
 import { withRouter } from 'react-router-dom'
+import messages from '../../messages'
 
 import NavDropdown from 'react-bootstrap/NavDropdown'
 
@@ -15,11 +16,12 @@ class CatDropdown extends Component {
   }
 
   componentDidMount () {
+    const { alert } = this.props
     axios(`${apiUrl}/cards`)
       .then(res => {
         this.setState({ cards: res.data.cards })
       })
-      .catch(console.error)
+      .catch(() => (alert(messages.dbConnectFail, 'danger')))
   }
 
   render () {

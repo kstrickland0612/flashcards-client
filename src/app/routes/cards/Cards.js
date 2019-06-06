@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
+import messages from '../../messages'
 
 import Card from 'react-bootstrap/Card'
 // import Button from 'react-bootstrap/Button'
@@ -21,11 +22,12 @@ class Cards extends Component {
   }
 
   componentDidMount () {
+    const { alert } = this.props
     axios(`${apiUrl}/cards`)
       .then(res => {
         this.setState({ cards: res.data.cards })
       })
-      .catch(console.error)
+      .catch(() => (alert(messages.dbConnectFail, 'danger')))
   }
 
   render () {

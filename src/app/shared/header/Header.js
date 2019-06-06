@@ -38,7 +38,7 @@ const unauthenticatedOptions = (
 //   </React.Fragment>
 // )
 
-const Header = ({ user, handleSearch }) => (
+const Header = ({ user, handleSearch, alert }) => (
   <header className="main-header">
     <Navbar collapseOnSelect bg="dark" variant="dark" expand="xl">
       <Navbar.Brand className="nav-brand" href="#">F<FontAwesomeIcon icon={faBolt} />ash Cards</Navbar.Brand>
@@ -47,7 +47,7 @@ const Header = ({ user, handleSearch }) => (
         <Nav className="ml-auto">
           { user && <span className="welcome-message">Hi there, {user.email.split('@')[0]}!</span>}
           {window.location.hash === '#/' ? <SearchBar handleSearch={handleSearch}/> : ''}
-          {window.location.hash === '#/' || (window.location.hash.includes('#/cards/') && !window.location.hash.includes('/edit')) ? <CatDropdown /> : ''}
+          {window.location.hash === '#/' || (window.location.hash.includes('#/cards/') && !window.location.hash.includes('/edit')) ? <CatDropdown alert={alert} /> : ''}
           { user ? authenticatedOptions : unauthenticatedOptions }
         </Nav>
       </Navbar.Collapse>

@@ -7,10 +7,10 @@ import CardFormOptions from './CardFormOptions'
 import './CardForm.scss'
 
 const CardForm = ({
-  card, cancelPath, handleSubmit, handleChange }) => (
+  card, cancelPath, handleSubmit, handleChange, alert }) => (
   <Form onSubmit={handleSubmit} className="card-form">
 
-    <CardFormOptions handleChange={handleChange}/>
+    <CardFormOptions alert={alert} handleChange={handleChange}/>
 
     <Form.Group controlId="image">
       <Form.Label>Image (optional)</Form.Label>

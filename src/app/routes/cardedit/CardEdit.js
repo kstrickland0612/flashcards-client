@@ -70,7 +70,6 @@ class CardEdit extends Component {
 
     const editedCard = Object.assign(this.state.card, updatedField)
     this.setState({ card: editedCard })
-    console.log(this.state)
   }
 
   render () {
@@ -84,6 +83,7 @@ class CardEdit extends Component {
       <Fragment>
         <h1>Edit your Card</h1>
         <CardForm
+          alert={this.props.alert}
           card={card}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}

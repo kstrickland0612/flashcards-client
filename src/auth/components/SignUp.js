@@ -32,8 +32,7 @@ class SignUp extends Component {
       .then(res => setUser(res.data.user))
       .then(() => alert(messages.signUpSuccess, 'success'))
       .then(() => history.push('/'))
-      .catch(error => {
-        console.error(error)
+      .catch(() => {
         this.setState({ email: '', password: '', passwordConfirmation: '' })
         alert(messages.signUpFailure, 'danger')
       })
@@ -67,14 +66,14 @@ class SignUp extends Component {
             onChange={this.handleChange}
           />
         </Form.Group>
-        <Form.Group controlId={passwordConfirmation}>
+        <Form.Group controlId="passwordConfirmation">
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control
             required
             type="password"
             placeholder="Confirm Password"
-            name={passwordConfirmation}
-            value={password}
+            name="passwordConfirmation"
+            value={passwordConfirmation}
             onChange={this.handleChange}
           />
         </Form.Group>

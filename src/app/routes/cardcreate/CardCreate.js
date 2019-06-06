@@ -69,6 +69,7 @@ class CardCreate extends Component {
       <Fragment>
         <h1>Build a Card</h1>
         <CardForm
+          alert={this.props.alert}
           card={card}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}

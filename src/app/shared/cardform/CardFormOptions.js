@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import apiUrl from './../../../apiConfig'
+import messages from '../../messages'
 
 import Form from 'react-bootstrap/Form'
 
@@ -18,11 +19,12 @@ class CardFormOptions extends Component {
   }
 
   componentDidMount () {
+    const { alert } = this.props
     axios(`${apiUrl}/cards`)
       .then(res => {
         this.setState({ cards: res.data.cards })
       })
-      .catch(console.error)
+      .catch(() => (alert(messages.dbConnectFail, 'danger')))
   }
 
   handleInput = () => {

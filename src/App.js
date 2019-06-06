@@ -51,7 +51,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Header user={user} handleSearch={this.handleSearch}/>
+        <Header alert={this.alert} user={user} handleSearch={this.handleSearch}/>
         {alerts.map((alert, index) => (
           <Alert key={index} dismissible variant={alert.type}>
             <Alert.Heading>
@@ -61,7 +61,7 @@ class App extends Component {
         ))}
         <main className="container">
           <Route exact path='/' render={() => (
-            <Cards user={user} search={search} />
+            <Cards alert={this.alert} user={user} search={search} />
           )} />
           <Route path='/sign-up' render={() => (
             <SignUp alert={this.alert} setUser={this.setUser} />
@@ -85,7 +85,7 @@ class App extends Component {
             <CardEdit match={match} user={user} alert={this.alert} />
           )} />
           <Route exact path='/cards/:category' render ={({ match }) => (
-            <CardsByCat match={match} />
+            <CardsByCat alert={this.alert} match={match} />
           )} />
         </main>
         <Footer />
