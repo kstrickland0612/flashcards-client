@@ -45,7 +45,7 @@ class CardsByCat extends Component {
                     </Card.Text>
                   </h2>
                 </Card.Body>
-                <Card.Footer className="hide-text text-muted">Created by: {card.user.email}</Card.Footer>
+                <Card.Footer className="hide-text text-muted">Created by: {card.user.email.split('@')[0]}</Card.Footer>
                 <div className="flip-card-back">
                   <h3><Card.Text>
                     {card.back}

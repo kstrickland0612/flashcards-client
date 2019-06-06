@@ -60,7 +60,7 @@ class MyCards extends Component {
                   </h2>
                 </Card.Body>
                 <Card.Footer className="hide-text text-muted">
-                  <p>Created by: {card.user.email}</p>
+                  <p>Created by: {card.user.email.split('@')[0]}</p>
                 </Card.Footer>
                 <div className="flip-card-back">
                   <h3><Card.Text>
