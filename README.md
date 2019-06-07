@@ -73,16 +73,16 @@ If you feel like getting a glimpse of what my planning process looks like...
 - Scaffold card resource
 - Test card resource end points with curl scripts
 - CRUD for cards from front end
-	GET /cards cards#index
-		From ‘/’ route (for all cards)
-		From authenticated ‘/my-cards’ (nav bar link to my account >>> my cards - for user’s cards)
-POST /cards cards#create
-	From authenticated ‘/build-card’ path (nav bar link)
-PATCH /cards:id cards#update
-	From authenticated ‘/edit-card/:id’ path (from my cards page)
-		Might be ‘my-cards/edit-card/:id’?
-DELETE /cards/:id cards#destroy
-	From authenticated ‘/my-cards:id’
+	- GET /cards cards#index
+		- From ‘/’ route (for all cards)
+		- From authenticated ‘/my-cards’ (nav bar link to my account >>> my cards - for user’s cards)
+	- POST /cards cards#create
+		- From authenticated ‘/build-card’ path (nav bar link)
+	- PATCH /cards:id cards#update
+	- From authenticated ‘/edit-card/:id’ path (from my cards page)
+		- Might be ‘my-cards/edit-card/:id’?
+	- DELETE /cards/:id cards#destroy
+		- From authenticated ‘/my-cards:id’
 - Get deployed app up and running (GH Pages)
 
 ### Day 2:
@@ -128,16 +128,6 @@ DELETE /cards/:id cards#destroy
 - this README! :)
 </details>
 
-## Challenges/Victories
-
-- **CSS Design**
-
-  I really wanted to challenge myself on CSS with this project. The concept of flipping cards and creating a clean UX was really appealing to me when I thought up this app. It's been a major victory to finally understand flexbox and use it well, and to get the cards to flip using transform: rotate. I spent time learning the ins and outs of media queries and Bootstrap's grid system to make the design responsive on mobile.
-
-- **Filtering results in React / Search Feature**
-
-	Creating the individual card category views and the card search were fun. Implementing these features really helped me get familiar with how React works. They might seem small, but there's a lot going on under the hood to let users see matching restults as they type into the search bar, and to let them see a deduplicated list of card categories in the Filter by Tag dropdown.
-
 ### ERD
 
 - **ERD:**
@@ -152,15 +142,17 @@ As always, I put together some wireframes to help me keep the end goal in mind.
 
 ### Routes
 
-* POST /sign-up users#signup
-* POST /sign-in users#signin
-* DELETE /sign-out users#sign-out
-* PATCH /change-password users#changepw
-* GET /cards cards#index
-* Get /cards/:id cards#show
-* POST /cards cards#create
-* PATCH /cards:id cards#update
-* DELETE /cards/:id cards#destroy
+| Verb   | URI Pattern      | Controller#Action |
+|--------|------------------|-------------------|
+| POST   | /sign-up         | users#signup      |
+| POST   | /sign-in         | users#signin      |
+| DELETE | /sign-out        | users#sign-out    |
+| PATCH  | /change-password | users#changepw    |
+| GET    | /cards           | cards#index       |
+| GET    | /cards/:id       | cards#show        |
+| POST   | /cards           | cards#create      |
+| PATCH  | /cards:id        | cards#update      |
+| DELETE | /cards/:id       | cards#destroy     |
 
 ### User Stories
 
@@ -181,6 +173,16 @@ As always, I put together some wireframes to help me keep the end goal in mind.
 10. As a user, I want to add cards to and remove cards from my deck, which is a storing area for all the cards I’m interested in drilling myself on.
 11. As a user, I want to browse existing categories of cards as if they are decks (for example: Spanish, computer science, history, biology).
 12. As a user, I want to rate my happiness with my answer for each card. A happy rating will give me a point. Points will make fun things happen in my account (TBD).
+
+## Challenges/Victories
+
+- **CSS Design**
+
+  I really wanted to challenge myself on CSS with this project. The concept of flipping cards and creating a clean UX was really appealing to me when I thought up this app. It's been a major victory to finally understand flexbox and use it well, and to get the cards to flip using transform: rotate. I spent time learning the ins and outs of media queries and Bootstrap's grid system to make the design responsive on mobile.
+
+- **Filtering results in React / Search Feature**
+
+	Creating the individual card category views and the card search were fun. Implementing these features really helped me get familiar with how React works. They might seem small, but there's a lot going on under the hood to let users see matching restults as they type into the search bar, and to let them see a de-duplicated list of card categories in the 'Filter by Tag' dropdown.
 
 ## Future Thinking
 
