@@ -12,6 +12,13 @@ Hope you enjoy it too!
 
 -K
 
+## Screenshots:
+
+![unflipped cards](https://i.imgur.com/TTnpDff.png "unflipped cards")
+![flipped cards](https://i.imgur.com/U48JMj9.png "flipped cards")
+![filter by tag](https://i.imgur.com/rsMT8NY.png "filter by tag")
+![build a card](https://i.imgur.com/8jg4Pv3.png "build a card")
+
 ## Technologies Used
 
 * JavaScript
