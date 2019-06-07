@@ -31,7 +31,7 @@ Hope you enjoy it too!
 
 1. Fork and Clone this repository.
 2. Install dependencies with ```npm install```.
-3. Install FontAwesome dependencies following ![these directions on NPM](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
+3. Install FontAwesome dependencies following [these directions on NPM](https://www.npmjs.com/package/@fortawesome/react-fontawesome)
 4. Run the development server with npm start.
 
 ### Back End Installation
@@ -42,7 +42,7 @@ Hope you enjoy it too!
 4. Generate new development and test secrets (```bundle exec rails secret```).
 5. Store the keys in .env with keys ```SECRET_KEY_BASE_<DEVELOPMENT|TEST>```, respectively.
 6. Run the development server with ```bin/rails server```.
-7. Set up a Heroku server, if desired. 
+7. Set up a Heroku server, if desired.
 
 ## Planning
 
@@ -50,9 +50,9 @@ A requirement of this capstone was to choose our own prefered tech stack to impl
 
 Once I settled on the technology, I set a pretty comprehensive 4 day schedule for myself. I added items to the schedule as needed on Day 3 and 4 after MVP were already met. I've found that meeting MVP is super simple when I take time to set up a smart schedule that allows for re-prioritization as needed.
 
+If you feel like getting a glimpse of what my planning process looks like...
 
-<details><summary>If you feel like getting a glimpse of what my planning process looks like, feel free to check out my schedule here (dropdown)!
-</summary>
+<details><summary>Feel free to check out my schedule here (dropdown)</summary>
 
 ### Day 1:
 
@@ -124,9 +124,11 @@ DELETE /cards/:id cards#destroy
 ## Challenges/Victories
 
 - **CSS Design**
+
   I really wanted to challenge myself on CSS with this project. The concept of flipping cards and creating a clean UX was really appealing to me when I thought up this app. It's been a major victory to finally understand flexbox and use it well, and to get the cards to flip using transform: rotate. I spent time learning the ins and outs of media queries and Bootstrap's grid system to make the design responsive on mobile.
 
 - **Filtering results in React / Search Feature**
+
 	Creating the individual card category views and the card search were fun. Implementing these features really helped me get familiar with how React works. They might seem small, but there's a lot going on under the hood to let users see matching restults as they type into the search bar, and to let them see a deduplicated list of card categories in the Filter by Tag dropdown.
 
 ### ERD
