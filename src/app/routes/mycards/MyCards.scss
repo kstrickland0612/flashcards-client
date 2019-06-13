@@ -48,6 +48,10 @@ Button {
   cursor: pointer;
 }
 
+.flip-card:hover .flip-card-back {
+  -webkit-backface-visibility: visible;
+}
+
 .flip-card-front,
 .flip-card-back {
   -webkit-backface-visibility: hidden;
@@ -67,6 +71,7 @@ Button {
   align-items: center;
   color: black;
   -webkit-transform: rotateY(180deg);
+  -webkit-backface-visibility: visible;
 }
 
 .buttons {
